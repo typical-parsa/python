@@ -6,4 +6,4 @@ def index(request):
     return render(request, 'home/index.html')
 
 def usershow(request, username):
-    return HttpResponse(f'hello {username}')
+    return render(request,'user/user.html', context={"name" : username})
