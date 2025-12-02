@@ -7,7 +7,7 @@ def todo_list(request):
     return render(request, 'todopage/todos.html', {"todos" : todos})
 
 def create_todo(request):
-    if request.method != "POST":
+    if request.method == "POST":
         title = request.POST.get('title')
         description = request.POST.get('description')
         category = request.POST.get('category')
@@ -17,8 +17,8 @@ def create_todo(request):
             title = title,
             description = description,
             category = category,
-            competed = False
+            completed = False
         )
         return redirect('todo-list')
     
-    return render(request, 'todo/createtodo.html')
+    return render(request, 'createtodopage/createtodo.html')
