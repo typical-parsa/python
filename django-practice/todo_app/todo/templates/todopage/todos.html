@@ -1,0 +1,17 @@
+<h1>Your Todos</h1>
+
+<ul>
+    {% for todo in todos %}
+        <li>
+            <strong>{{ todo.title }}</strong>  
+            <h1>{{todo.description}}</h1>
+            {% if todo.completed %}
+                ✔️ Completed
+            {% else %}
+                ❌ Not completed
+            {% endif %}
+        </li>
+    {% empty %}
+        <p>You have no todos yet.</p>
+    {% endfor %}
+</ul>
